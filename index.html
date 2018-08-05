@@ -1,10 +1,23 @@
 <body>
 
 <template id="ah-h1">
-    EasilyLinkableH1
+    <style>
+        h1 {
+            background-color: red
+        }
+    </style>
+
+    <h1>
+        <a>O</a>
+        EasilyLinkableH1
+    </h1>
 </template>
 
-<ah-h1></ah-h1>
+<ah-h1 id="one"></ah-h1>
+<h1 style="padding-top: 1000px"></h1>
+<ah-h1 id="two"></ah-h1>
+<ah-h1 id="three"></ah-h1>
+<ah-h1 id="four"></ah-h1>
 
 <script>
   class EasilyLinkableH1 extends HTMLElement {
@@ -17,7 +30,8 @@
     }
 
     connectedCallback() {
-      console.log('webcomponent connected')
+      const id = this.getAttribute("id")
+      this.shadowRoot.querySelector('h1 > a').setAttribute('href', `#${id}`)
     }
   }
 
