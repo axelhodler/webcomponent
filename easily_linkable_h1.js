@@ -16,6 +16,7 @@
         }
     </style>
 
+    <slot name="description">Default</slot>
     <h1>
         <a>🔗</a>
         <span></span>
