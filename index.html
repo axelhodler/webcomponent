@@ -1,9 +1,21 @@
 <body>
 
+<template id="ah-h1">
+    EasilyLinkableH1
+</template>
+
 <ah-h1></ah-h1>
 
 <script>
   class EasilyLinkableH1 extends HTMLElement {
+    constructor() {
+      super()
+      let template = document.getElementById("ah-h1")
+      let templateContent = template.content
+      const shadowRoot = this.attachShadow({mode: 'open'})
+        .appendChild(templateContent.cloneNode(true))
+    }
+
     connectedCallback() {
       console.log('webcomponent connected')
     }
