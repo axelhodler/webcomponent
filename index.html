@@ -1,0 +1,15 @@
+<body>
+
+<ah-h1></ah-h1>
+
+<script>
+  class EasilyLinkableH1 extends HTMLElement {
+    connectedCallback() {
+      console.log('webcomponent connected')
+    }
+  }
+
+  customElements.define('ah-h1', EasilyLinkableH1)
+</script>
+</body>
+</html>
