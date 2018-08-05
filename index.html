@@ -11,19 +11,22 @@
         h1:hover a {
             visibility: visible;
         }
+
+        h1 {
+            margin-bottom: 300px;
+        }
     </style>
 
     <h1>
         <a>🔗</a>
-        EasilyLinkableH1
+        <span></span>
     </h1>
 </template>
 
-<ah-h1 id="one"></ah-h1>
-<h1 style="padding-top: 1000px"></h1>
-<ah-h1 id="two"></ah-h1>
-<ah-h1 id="three"></ah-h1>
-<ah-h1 id="four"></ah-h1>
+<ah-h1 title="Getting Started"></ah-h1>
+<ah-h1 title="Build"></ah-h1>
+<ah-h1 title="Test"></ah-h1>
+<ah-h1 title="License"></ah-h1>
 
 <script>
   class EasilyLinkableH1 extends HTMLElement {
@@ -36,8 +39,10 @@
     }
 
     connectedCallback() {
-      const id = this.getAttribute("id")
-      this.shadowRoot.querySelector('h1 > a').setAttribute('href', `#${id}`)
+      const title= this.getAttribute("title")
+      this.setAttribute('id', title)
+      this.shadowRoot.querySelector('h1 > a').setAttribute('href', `#${title}`)
+      this.shadowRoot.querySelector('h1 > span').innerHTML = title
     }
   }
 
