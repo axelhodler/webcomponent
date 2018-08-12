@@ -4,6 +4,6 @@ QUnit.test("component uses title attribute", assert => {
   component.setAttribute('title', 'My Title')
   document.body.appendChild(component)
 
-  const actualTitle = document.getElementById('My Title').shadowRoot.querySelector('h1 > span').innerText
+  const actualTitle = document.getElementById('My Title').shadowRoot.querySelector('#title').innerText
   assert.equal(actualTitle, title)
 })

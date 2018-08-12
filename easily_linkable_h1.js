@@ -19,7 +19,7 @@
     <slot name="description">Default</slot>
     <h1>
         <a>🔗</a>
-        <span></span>
+        <span id="title"></span>
     </h1>
 `
 
@@ -35,7 +35,7 @@
       const title = this.getAttribute("title")
       this.setAttribute('id', title)
       this.shadowRoot.querySelector('h1 > a').setAttribute('href', `#${title}`)
-      this.shadowRoot.querySelector('h1 > span').innerHTML = title
+      this.shadowRoot.querySelector('#title').innerHTML = title
     }
   }
 
