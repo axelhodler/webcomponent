@@ -11,16 +11,20 @@
             visibility: visible;
         }
 
-        h1 {
-            margin-bottom: 300px;
+        div {
+            display: block;
+            width: 500px;
+            margin-left: 40px;
         }
     </style>
 
-    <slot name="description">Default</slot>
     <h1>
         <a id="link">🔗</a>
         <span id="title"></span>
     </h1>
+    <div>
+        <slot name="description">Default Text</slot>
+    </div>
 `
 
   class EasilyLinkableH1 extends HTMLElement {
